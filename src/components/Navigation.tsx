@@ -21,19 +21,19 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="/" className="text-foreground hover:text-primary transition-colors font-medium">
               Home
             </a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="/services" className="text-foreground hover:text-primary transition-colors font-medium">
               Services
             </a>
-            <a href="#parts" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="/parts" className="text-foreground hover:text-primary transition-colors font-medium">
               Parts Store
             </a>
-            <a href="#marketplace" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="/marketplace" className="text-foreground hover:text-primary transition-colors font-medium">
               Marketplace
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+            <a href="/contact" className="text-foreground hover:text-primary transition-colors font-medium">
               Contact
             </a>
           </div>
@@ -63,35 +63,35 @@ const Navigation = () => {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-sm border-b border-border">
             <div className="px-4 py-6 space-y-4">
               <a
-                href="#home"
+                href="/"
                 className="block text-foreground hover:text-primary transition-colors font-medium"
                 onClick={toggleMenu}
               >
                 Home
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="block text-foreground hover:text-primary transition-colors font-medium"
                 onClick={toggleMenu}
               >
                 Services
               </a>
               <a
-                href="#parts"
+                href="/parts"
                 className="block text-foreground hover:text-primary transition-colors font-medium"
                 onClick={toggleMenu}
               >
                 Parts Store
               </a>
               <a
-                href="#marketplace"
+                href="/marketplace"
                 className="block text-foreground hover:text-primary transition-colors font-medium"
                 onClick={toggleMenu}
               >
                 Marketplace
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="block text-foreground hover:text-primary transition-colors font-medium"
                 onClick={toggleMenu}
               >
