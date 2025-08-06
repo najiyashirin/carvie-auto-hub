@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Menu, X, MessageCircle } from "lucide-react";
 import carvieLogo from "@/assets/carvie-logo.png";
 
@@ -37,8 +38,9 @@ const Navigation = () => {
             </a>
           </div>
 
-          {/* Auth Buttons */}
+          {/* Auth Buttons & Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Button variant="ghost" className="text-foreground">
               Login
             </Button>

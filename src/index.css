@@ -7,41 +7,100 @@
 
 @layer base {
   :root {
-    /* Carvie Brand Colors - Automotive Dark Theme */
-    --background: 240 11% 4%;          /* #0B090A - Deep black */
-    --foreground: 0 0% 96%;            /* #F5F3F4 - Soft white */
+    /* Light Mode - Carvie Automotive Theme */
+    --background: 0 0% 98%;             /* #FAFAFA - Light background */
+    --foreground: 240 11% 4%;           /* #0B090A - Dark text */
 
-    --card: 240 9% 9%;                 /* #161A1D - Charcoal gray */
-    --card-foreground: 0 0% 96%;       /* #F5F3F4 */
+    --card: 0 0% 100%;                  /* #FFFFFF - White cards */
+    --card-foreground: 240 11% 4%;      /* #0B090A */
 
-    --popover: 240 9% 9%;              /* #161A1D */
-    --popover-foreground: 0 0% 96%;    /* #F5F3F4 */
+    --popover: 0 0% 100%;               /* #FFFFFF */
+    --popover-foreground: 240 11% 4%;   /* #0B090A */
 
-    --primary: 359 78% 56%;            /* #E5383B - Carvie Red */
-    --primary-foreground: 0 0% 100%;   /* Pure white */
+    --primary: 359 78% 56%;             /* #E5383B - Carvie Red */
+    --primary-foreground: 0 0% 100%;    /* Pure white */
 
-    --secondary: 240 9% 9%;            /* #161A1D - Charcoal */
-    --secondary-foreground: 0 0% 96%;  /* #F5F3F4 */
+    --secondary: 240 4% 96%;            /* #F5F5F5 - Light gray */
+    --secondary-foreground: 240 11% 4%; /* #0B090A */
 
-    --muted: 240 9% 9%;                /* #161A1D */
-    --muted-foreground: 10 2% 69%;     /* #B1A7A6 - Neutral gray */
+    --muted: 240 4% 96%;                /* #F5F5F5 */
+    --muted-foreground: 10 2% 45%;      /* #737373 - Medium gray */
 
-    --accent: 359 82% 41%;             /* #A4161A - Dark red accent */
-    --accent-foreground: 0 0% 100%;    /* Pure white */
+    --accent: 359 82% 41%;              /* #A4161A - Dark red accent */
+    --accent-foreground: 0 0% 100%;     /* Pure white */
 
-    --destructive: 359 88% 38%;        /* #BA181B - Danger red */
+    --destructive: 359 88% 38%;         /* #BA181B - Danger red */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 9% 15%;              /* Darker border */
-    --input: 240 9% 12%;               /* Input background */
-    --ring: 359 78% 56%;               /* #E5383B - Focus ring */
+    --border: 240 4% 90%;               /* #E5E5E5 - Light border */
+    --input: 240 4% 96%;                /* #F5F5F5 - Input background */
+    --ring: 359 78% 56%;                /* #E5383B - Focus ring */
 
     --radius: 0.75rem;
 
     /* Carvie Custom Design Tokens */
-    --carvie-deep: 6 88% 20%;          /* #660708 - Deep red */
-    --carvie-neutral: 10 4% 83%;       /* #D3D3D3 - Light neutral */
-    --carvie-surface: 240 11% 6%;      /* Slightly lighter than background */
+    --carvie-deep: 6 88% 20%;           /* #660708 - Deep red */
+    --carvie-neutral: 10 4% 83%;        /* #D3D3D3 - Light neutral */
+    --carvie-surface: 0 0% 97%;         /* #F7F7F7 - Surface */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-surface: linear-gradient(135deg, hsl(var(--card)), hsl(var(--carvie-surface)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--card)));
+
+    /* Shadows */
+    --shadow-elegant: 0 25px 50px -12px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Carvie Automotive Theme */
+    --background: 240 11% 4%;           /* #0B090A - Deep black */
+    --foreground: 0 0% 96%;             /* #F5F3F4 - Soft white */
+
+    --card: 240 9% 9%;                  /* #161A1D - Charcoal gray */
+    --card-foreground: 0 0% 96%;        /* #F5F3F4 */
+
+    --popover: 240 9% 9%;               /* #161A1D */
+    --popover-foreground: 0 0% 96%;     /* #F5F3F4 */
+
+    --primary: 359 78% 56%;             /* #E5383B - Carvie Red */
+    --primary-foreground: 0 0% 100%;    /* Pure white */
+
+    --secondary: 240 9% 9%;             /* #161A1D - Charcoal */
+    --secondary-foreground: 0 0% 96%;   /* #F5F3F4 */
+
+    --muted: 240 9% 9%;                 /* #161A1D */
+    --muted-foreground: 10 2% 69%;      /* #B1A7A6 - Neutral gray */
+
+    --accent: 359 82% 41%;              /* #A4161A - Dark red accent */
+    --accent-foreground: 0 0% 100%;     /* Pure white */
+
+    --destructive: 359 88% 38%;         /* #BA181B - Danger red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 9% 15%;               /* Darker border */
+    --input: 240 9% 12%;                /* Input background */
+    --ring: 359 78% 56%;                /* #E5383B - Focus ring */
+
+    /* Carvie Custom Design Tokens */
+    --carvie-deep: 6 88% 20%;           /* #660708 - Deep red */
+    --carvie-neutral: 10 4% 83%;        /* #D3D3D3 - Light neutral */
+    --carvie-surface: 240 11% 6%;       /* Slightly lighter than background */
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
@@ -53,55 +112,6 @@
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
 
-    /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
