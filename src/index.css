@@ -2,41 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Carvie Automotive Platform Design System - Dark Elegant Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Carvie Brand Colors - Automotive Dark Theme */
+    --background: 240 11% 4%;          /* #0B090A - Deep black */
+    --foreground: 0 0% 96%;            /* #F5F3F4 - Soft white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 9% 9%;                 /* #161A1D - Charcoal gray */
+    --card-foreground: 0 0% 96%;       /* #F5F3F4 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 9% 9%;              /* #161A1D */
+    --popover-foreground: 0 0% 96%;    /* #F5F3F4 */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 359 78% 56%;            /* #E5383B - Carvie Red */
+    --primary-foreground: 0 0% 100%;   /* Pure white */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 9% 9%;            /* #161A1D - Charcoal */
+    --secondary-foreground: 0 0% 96%;  /* #F5F3F4 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 9% 9%;                /* #161A1D */
+    --muted-foreground: 10 2% 69%;     /* #B1A7A6 - Neutral gray */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 359 82% 41%;             /* #A4161A - Dark red accent */
+    --accent-foreground: 0 0% 100%;    /* Pure white */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 359 88% 38%;        /* #BA181B - Danger red */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 9% 15%;              /* Darker border */
+    --input: 240 9% 12%;               /* Input background */
+    --ring: 359 78% 56%;               /* #E5383B - Focus ring */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Carvie Custom Design Tokens */
+    --carvie-deep: 6 88% 20%;          /* #660708 - Deep red */
+    --carvie-neutral: 10 4% 83%;       /* #D3D3D3 - Light neutral */
+    --carvie-surface: 240 11% 6%;      /* Slightly lighter than background */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-surface: linear-gradient(135deg, hsl(var(--card)), hsl(var(--carvie-surface)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--card)));
+
+    /* Shadows */
+    --shadow-elegant: 0 25px 50px -12px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +119,57 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer components {
+  /* Carvie UI Components */
+  .carvie-hero-bg {
+    background: var(--gradient-hero);
+  }
+  
+  .carvie-card {
+    background: var(--gradient-surface);
+    box-shadow: var(--shadow-card);
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+  
+  .carvie-card:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: translateY(-2px);
+  }
+  
+  .carvie-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .carvie-text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--shadow-elegant); }
+    50% { box-shadow: var(--shadow-glow); }
   }
 }
